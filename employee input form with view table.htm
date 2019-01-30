@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <style>
+
+body{
+     background-color: #f6f6f6;
+}
+        table{
+            background: #fff;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+        }
+                             tr {
+            transition: all .25s ease-in-out
+        }
+        
+        tr:hover {
+            background-color: #EEE;
+            cursor: pointer;
+        }
+        
+        #table {
+            display: none;
+        }
+
+        tr>th {
+    
+    background: #d67775;
+    color: #fff;
+    box-shadow: 1px 5px #f1f1f1;
+}
+td{
+    padding-bottom: 0px !important;
+    
+    font-family: cursive;
+}
+.tableview{
+    max-height: 240px;
+    overflow-y: auto;
+}
+
+.tablebinder{
+    border-radius: 10px;
+}.btn-success {
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+    margin-bottom: 11px;
+}
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+<div class="col-sm-6 col-sm-offset-3">
+
+     <div class="row">
+            <h2>Employee Input Form</h2>
+        <p>Fill your Details here</p>    
+        <div class="tablebinder">        
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th class="intable"> Employee Field Name</th>
+              <th>Employee Input Box</th>
+            </tr>
+          </thead>
+          <tbody>
+
+                <tr>
+                        <td>Firstname</td>
+                        <td><input type="text" class="form-control" name="fname" id="fname" autofocus ></td>
+                        
+                      </tr>
+            <tr>
+              <td>Last Name</td>
+              <td> <input type="text" name="lname" id="lname" class="form-control"></td>
+             
+            </tr>
+            <tr>
+              <td>Gender</td>
+              <td><input type="radio" name="Gender" value="Male" checked >Male
+                <input type="radio" name="Gender" value="Female" >Female</td></td>
+              
+            </tr>
+            <tr>
+              <td> Martial Status</td>
+              <td><input onclick="document.getElementById('spouse').disabled = false;" type="radio" name="Martial Status" checked="checked">married
+
+                <input onclick="document.getElementById('spouse').disabled = true;" type="radio" name="Martial Status" value="Unmarried">unmarried</td></td>
+          
+            </tr>
+
+            <tr>
+                    <td> Name of Spouse</td>
+                    <td>
+                        <input type="text" name="spouse" id="spouse" class="form-control">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Other Details:</td>
+                    <td>
+                        <input type="text" name="Other Details" class="form-control">
+                    </td>
+                </tr>
+
+                <tr>
+                        <td>
+                            <label class="">
+                                <input type="checkbox"><span class="checkmark"></span>I accept the <a href="http://www.bristol.ac.uk/hr/terms/generalterms.html">terms and conditions</a></label>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>
+
+                            <button onclick="addHtmlTableRow();" class="btn btn-success">Submit</button>
+
+                        </td>
+                        <td>
+                            <button onclick="toggleTable();" class="btn btn-warning">View Table</button>
+
+                    </tr>
+          </tbody>
+        </table>
+    </div>
+     </div>
+     <div class="row">
+       
+      
+      <div class="tableview">
+
+            <table id="table" class="table table-bordered" >
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Name of Spouse</th>
+                    </tr>
+                    <tr>
+                        <td>Nilima</td>
+                        <td>Yadav</td>
+                        <td>Nili</td>
+                    </tr>
+                    <tr>
+                        <td>Sapna</td>
+                        <td>Bhandari</td>
+                        <td>Sridhar</td>
+                    </tr>
+                    <tr>
+                        <td>Aish</td>
+                        <td>Siayypa</td>
+                        <td>abhi</td>
+                    </tr>
+                </table>
+      </div>
+     </div>
+</div>
+  
+
+    <script>
+        var rIndex,
+            table = document.getElementById("table");
+
+        // check the empty input
+        function checkEmptyInput() {
+            var isEmpty = false,
+                fname = document.getElementById("fname").value,
+                lname = document.getElementById("lname").value,
+                spouse = document.getElementById("spouse").value;
+
+            if (fname === "") {
+                alert("First Name Connot Be Empty");
+                isEmpty = true;
+            } else if (lname === "") {
+                alert("Last Name Connot Be Empty");
+                isEmpty = true;
+            } 
+            return isEmpty;
+        }
+
+        // add Row
+        function addHtmlTableRow() {
+            // get the table by id
+            // create a new row and cells
+            // get value from input text
+            // set the values into row cell's
+            if (!checkEmptyInput()) {
+                var newRow = table.insertRow(table.length),
+                    cell1 = newRow.insertCell(0),
+                    cell2 = newRow.insertCell(1),
+                    cell3 = newRow.insertCell(2),
+                    fname = document.getElementById("fname").value,
+                    lname = document.getElementById("lname").value,
+                    spouse = document.getElementById("spouse").value;
+
+                cell1.innerHTML = fname;
+                cell2.innerHTML = lname;
+                cell3.innerHTML = spouse;
+                // call the function to set the event to the new row
+                selectedRowToInput();
+            }
+        }
+
+        // display selected row data into input text
+        function selectedRowToInput() {
+
+            for (var i = 1; i < table.rows.length; i++) {
+                table.rows[i].onclick = function() {
+                    // get the seected row index
+                    rIndex = this.rowIndex;
+                    document.getElementById("fname").value = this.cells[0].innerHTML;
+                    document.getElementById("lname").value = this.cells[1].innerHTML;
+                    document.getElementById("spouse").value = this.cells[2].innerHTML;
+                };
+            }
+        }
+        selectedRowToInput();
+
+        function toggleTable() {
+            var lTable = document.getElementById("table");
+            lTable.style.display = (lTable.style.display == "table") ? "block" : "table";
+        }
+    </script>
+
+</body>
+
+</html>

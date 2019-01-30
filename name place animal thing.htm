@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Drop and Drag Game</title>
+</head>
+<body bgcolor="#c8daf7">
+    <style>
+        .box1 {
+            float: left;
+            width: 95px;
+            height: 35px;
+            margin-left: 190px;
+            padding: 10px;
+            border: 1px solid #2dcebe;
+            font-size: 30px;
+        }
+
+        .box2 {
+            float: left;
+            width: 95px;
+            height: 35px;
+            margin-left: 190px;
+            padding: 10px;
+            border: 1px solid #c8daf7;
+            font-size: 30px;
+        }
+    </style>
+    <center>
+    <p style="font-weight: 100px;
+    font-size: 40px; font-family: bold">Score: <text id="score1">0</text></p>
+
+    <div class="box2" ondrop="drop1(event)">
+        <text ondragstart="dragStart1(event)" draggable="true" id="target1">Beyonce</text>
+    </div>
+
+    <div class="box2" ondrop="drop2(event)">
+        <text  ondragstart="dragStart2(event)" draggable="true" id="target2">Dessert</text>
+    </div>
+
+    <div class="box2" ondrop="drop3(event)">
+        <text ondragstart="dragStart3(event)" draggable="true" id="target3">Deer</text>
+    </div>
+
+    <div class="box2" ondrop="drop4(event)">
+        <text ondragstart="dragStart4(event)" draggable="true" id="target4">Vase</text>
+    </div>
+
+    
+    <br /><br /><br /><br />
+
+    <div class="box1" ondrop="drop6(event)" ondragover="allowDrop1(event)" id="place1">Name</div>
+
+    <div class="box1" ondrop="drop7(event)" ondragover="allowDrop2(event)" id="place2">place</div>
+
+    <div class="box1" ondrop="drop8(event)" ondragover="allowDrop3(event)" id="place3">name</div>
+
+    <div class="box1" ondrop="drop9(event)" ondragover="allowDrop4(event)" id="place4">thing</div>
+
+    <br /><br /><br />
+    
+    <button onclick="submit1()" style="border-radius: 12px;font-size: 34px; background-color: #2dcebe; margin-top:100px" >Submit</button>
+    <p id="message1" style="font-size: 40px;"></p>
+</center>
+
+    <script>
+    var b = 0;
+    b++;
+function dragStart1(event) {
+    event.dataTransfer.setData("choice1", event.target.id);
+}
+
+function dragStart2(event) {
+    event.dataTransfer.setData("choice2", event.target.id);
+}
+
+function dragStart3(event) {
+    event.dataTransfer.setData("choice3", event.target.id);
+}
+
+function dragStart4(event) {
+    event.dataTransfer.setData("choice4", event.target.id);
+}
+
+
+function allowDrop1(event) {
+    event.preventDefault();
+}
+
+function allowDrop2(event) {
+    event.preventDefault();
+}
+
+function allowDrop3(event) {
+    event.preventDefault();
+}
+
+function allowDrop4(event) {
+    event.preventDefault();
+}
+
+function allowDrop5(event) {
+    event.preventDefault();
+}
+
+function drop6(event) {
+    var data = event.dataTransfer.getData("choice1");
+    event.target.appendChild(document.getElementById(data));
+score1.innerHTML = b++;
+        place1.innerHTML = "Beyonce";
+}
+
+function drop7(event) {
+    var data = event.dataTransfer.getData("choice2");
+    event.target.appendChild(document.getElementById(data));
+score1.innerHTML = b++;
+        place2.innerHTML = "Dessert";
+}
+
+function drop8(event) {
+    var data = event.dataTransfer.getData("choice3");
+    event.target.appendChild(document.getElementById(data));
+score1.innerHTML = b++;
+        place3.innerHTML = "Deer";
+}
+
+function drop9(event) {
+    var data = event.dataTransfer.getData("choice4");
+    event.target.appendChild(document.getElementById(data));
+score1.innerHTML = b++;
+        place4.innerHTML = "Vase";
+}
+
+
+
+function drop1(event) {
+    event.preventDefault();
+}
+
+function drop2(event) {
+    event.preventDefault();
+}
+
+function drop3(event) {
+    event.preventDefault();
+
+}
+
+function drop4(event) {
+    event.preventDefault();
+}
+
+
+
+function submit1() {
+if (b > 4) {
+message1.innerHTML = "Congratulations Your score is 4/4 .";
+}
+}
+    </script>
+</body>
+</html>

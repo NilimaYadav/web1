@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>division</title>
+	<style>
+	
+		
+		.row
+		{
+			width: 600px;
+			height: 600px;
+			background-color: grey;
+		}
+		#two
+		{
+
+
+    max-height: 400px;
+    overflow-y: scroll;
+
+		}
+		#one
+		{
+			max-height: 400px;
+			overflow-y: scroll;
+		}
+
+
+		
+	</style>
+	<script>
+		function move() {
+
+        var content = document.getElementById("one").innerHTML;
+        document.getElementById("one").innerHTML="";
+
+        document.getElementById("two").innerHTML = content;
+
+    }
+
+	</script>
+</head>
+<body bgcolor="#becace">
+	<center>
+	<div class="container">
+		<div class="row">
+		
+			<div contenteditable="true" id="one" style="height:400px; width:450px;background-color:white;float:left;width:40%; padding-top: 20px; margin-top: 30px; margin-left: 10px;"> </div>
+
+<div contenteditable="false" id="two" style="height:425px; width:450px; background:#344663;float:right;width:40%; margin-top: 30px; margin-right: 10px;"><p style="color: white"></p>
+</div>
+
+
+<input type="submit" onclick="move();" value="refresh" style="margin-top: 500px;">
+		
+		
+	</div>
+</div>
+	</center>
+
+</body>
+</html>

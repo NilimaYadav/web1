@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		function encode()
+		{ var enc;
+			var src=document.getElementById('a').value;
+			enc=window.btoa(src);
+			document.getElementById('b').value = enc;
+		}
+		function decode()
+		{ var val;
+			var src = document.getElementById('a').value;
+			val=window.atob(src);
+			document.getElementById('b').value=val;
+		}
+
+	</script>
+</head>
+<body bgcolor="#7291c9">
+	<center>
+	<textarea id="a" style="height: 200px;"></textarea>
+	<textarea id="b" style="height: 200px;" ></textarea>
+	<br>
+	<br>
+	<button onclick="encode();">Encode</button>
+	<button onclick="decode();">Decode</button>
+	</center>
+
+</body>
+</html>

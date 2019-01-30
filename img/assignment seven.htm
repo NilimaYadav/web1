@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Employee input form</title>
+	<script>
+		var i=0;
+		var delt=[];
+		var name;
+		var lname;
+		
+		function myFunction()
+		{
+		  name=document.getElementById("FirstName").value.trim();
+		  lname=document.getElementById("LastName").value.trim();
+		 if (name== "" || lname== "") {
+		 	alert("name must be filled");
+		 } else if(!name.match("^[a-zA-Z]+$") || !lname.match("^[a-zA-Z]+$")) {
+		 	alert("no numbers must be included!");
+		 } else  {
+		 	alert("Thank You");
+		 	
+		 	 delt=[name,lname];
+		 	 name: "name";
+		 	 lname: "lname";
+		 	i=i+1;
+		 	
+		 }
+		}
+		 function view1(){
+		 	    for(var j=0;j<i;j++)
+               alert(delt[j]);
+       
+   
+var text = "";
+var i;
+for (i = 0; i < delt.length; i++) {
+ text += delt[i];
+}
+document.getElementById("show").innerHTML= text;   
+/*var row=table.insertRow(0);
+var cell1= row.insertCell(0);
+var cell2=row.insertCell(1);
+cell1.innerHTML =this.name = name;
+cell2.innerHTML=this.lname = lname;*/
+rows += "<td>" + name + "</td><td>" + lname + "</td>";
+        var tbody = document.querySelector("#show tbody");
+        var tr = document.createElement("tr");
+
+        tr.innerHTML = rows;
+        tbody.appendChild(tr)
+
+
+
+
+
+		 	
+		 	 
+		 }
+
+		   	
+		
+	
+	</script>
+
+	
+	<style>
+	
+		align-items: center;
+	
+		  table{border: 1px solid black;}
+
+	</style>
+
+</head>
+<body>
+
+	<form name="RegForm">
+	<table border="1" align="center">  
+		<tr>
+			<td>
+		FirstName:</td>
+		<td><input type="text" id="FirstName" autofocus>
+	</td>
+	</tr>
+		<tr>
+			<td>
+		LastName:</td>
+		<td><input type="text" id="LastName">
+		</td>
+		<tr>
+			<td>Gender:</td>
+		<td><input type="radio" name="Gender" value="Male" checked>Male
+		<input type="radio" name="Gender" value="Female">Female</td>
+		</tr>
+		<tr>
+			<td>
+		Martial Status:</td>
+		<td><input onclick="document.getElementById('sname').disabled = false;" type="radio" name="Gender" checked="checked">married
+
+<input onclick="document.getElementById('sname').disabled = true;" type="radio" name="Gender" value="Unmarried">unmarried</td>
+</tr>
+<tr><td> Name of Spouse</td> <td><input type="text" name="name of spouse" id="sname" value="Name of spouse" ></td>
+</tr>
+
+
+
+	<tr>
+		<td>Other Details:</td>
+		<td><input type="text" name="Other Details">
+		</td>
+		</tr>
+		<tr>
+		<td><label class="container"><input type="checkbox"><span class="checkmark"></span>I accept the<a href="http://www.bristol.ac.uk/hr/terms/generalterms.html">terms and conditions</a></label></td></tr>
+		<tr>
+		<td><input type="button" value="submit" onclick="myFunction()">
+		</td>
+		<td><input type="Reset" value="Reset"></td>
+		
+	</tr>
+	
+	</table>
+	</form>
+	<br>
+	<br>
+	<center>
+	<button onclick="view1();">view</button>
+	
+
+	
+		
+
+</body>
+</html>

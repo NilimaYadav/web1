@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>message pop up box</title>
+
+<script>
+
+function validate()
+{
+                                    
+ 
+    
+    var a=document.getElementById("fname").value;
+    var b=document.getElementById("lname").value;
+
+    if (a  == "")                                  
+    { 
+        alert("Please enter your name."); 
+        
+       
+    } 
+    else
+    {
+    	alert("HELLO I AM :" + a + " "+b);
+
+    }
+   }
+
+</script>
+</head>
+<body bgcolor="#7291c9">
+    <center>
+
+<form name="myForm" action="/submit.php" onsubmit="return validate()" method="post">
+First name:<input type="text" id="fname" name="firstName"  /><br>
+<br>
+Last name:<input type="text" id="lname" name="lastName"  /><br>
+<br>
+
+<input type="button" value="Join!" onclick=" return validate()">
+
+</form>
+</center>
+</body>
+</html>
+ 

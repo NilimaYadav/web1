@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		#dod
+		{
+			margin-top: 100px;
+			background-color: #e8af45;
+			font-size: 30px;
+			
+
+		}
+		#dad
+		{
+			margin-top: 100px;
+			background-color: #e8af45;
+			font-size: 30px;
+
+
+
+		}
+
+		
+	</style>
+</head>
+<body bgcolor="#2d92b7">
+	<center>
+
+<button id="dod" onclick="openWin()">Open "Window"</button>
+<button id="dad" onclick="closeWin()">Close "Window"</button>
+<div class="content"></div>
+</center>
+
+
+<script>
+
+
+function openWin() {
+  myWindow = window.open("test.html", "Window", "width=400,height=400","align-items:center");
+  // myWindow.document.write("<p style="font-size:50px">This is child window</p>");
+}
+
+function closeWin() {
+  myWindow.close();
+}
+</script>
+
+</body>
+</html>

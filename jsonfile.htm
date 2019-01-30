@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+
+<p id="card"></p>
+
+<script> 
+	// setInterval(function(){alert("loading file wait");},9000);
+	setInterval(function(){})
+var x = new XMLHttpRequest();
+x.onreadystatechange = function() {
+	  //setInterval(function(){ alert("Loading file please wait"); }, 9000);
+  if (this.readyState == 4 && this.status == 200) {
+    var y = JSON.parse(this.responseText);
+    document.getElementById("card").innerHTML = y.name;
+  }
+  /*else
+  {
+  	window.alert("error loading page");
+  }*/
+};
+x.open("GET", "file.json", true);
+x.send();
+</script>
+<center>
+<p style="font-size: 30px;">Load the file here <a href="file.json">show data</a></p>
+</center>
+</body>
+</html>

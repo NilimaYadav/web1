@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Employee input form</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+	<script>
+		var i=0;
+		var delt=[];
+		var name;
+		var lname;
+		
+		function myFunction()
+		{
+		  name=document.getElementById("FirstName").value.trim();
+		  lname=document.getElementById("LastName").value.trim();
+		 if (name== "" || lname== "") {
+		 	alert("name must be filled");
+		 } else if(!name.match("^[a-zA-Z]+$") || !lname.match("^[a-zA-Z]+$")) {
+		 	alert("no numbers must be included!");
+		 } else  {
+		 	alert("Thank You");
+		 	
+		 	 delt=[name,lname];
+		 	 name: "name";
+		 	 lname: "lname";
+		 	i=i+1;
+		 	
+		 }
+		}
+		 function view1(){
+		 	    for(var j=0;j<i;j++)
+               alert(delt[j]);
+       
+   
+var text = "";
+var i;
+for (i = 0; i < delt.length; i++) {
+ text += delt[i];
+}
+document.getElementById("show").innerHTML= text;   
+/*var row=table.insertRow(0);
+var cell1= row.insertCell(0);
+var cell2=row.insertCell(1);
+cell1.innerHTML =this.name = name;
+cell2.innerHTML=this.lname = lname;*/
+rows += "<td>" + name + "</td><td>" + lname + "</td>";
+        var tbody = document.querySelector("#show tbody");
+        var tr = document.createElement("tr");
+
+        tr.innerHTML = rows;
+        tbody.appendChild(tr)
+
+
+
+
+
+		 	
+		 	 
+		 }
+
+		   	
+		
+	
+	</script>
+
+	
+</head>
+
+
+<div class="container">
+		<h2>Employee form</h2>
+		<form class="form-horizontal" name="RegForm">
+		  <div class="form-group">
+			<label class="control-label col-sm-2">First Name</label>
+			<div class="col-sm-10">
+			  <input type="text"  id="FirstName" class="form-control"  placeholder="Enter First Name" >
+			</div>
+		  </div>
+
+
+		  <div class="form-group">
+				<label class="control-label col-sm-2" >Last Name</label>
+				<div class="col-sm-10">
+				  <input type="text"  id="LastName" class="form-control"  placeholder="Enter Last Name" >
+				</div>
+			  </div>
+
+
+
+			  <div class="form-group">
+					<label class="control-label col-sm-2" >Gender</label>
+					<div class="col-sm-10">
+							
+						 <input type="radio" name="Gender" value="Male" checked>Male
+						 <input type="radio" name="Gender" value="Female">Female</td>
+
+					</div>
+				  </div>
+	
+	
+			
+
+					  <div class="form-group">
+							<label class="control-label col-sm-2" >Martial Status</label>
+							<div class="col-sm-10">
+									
+									<input onclick="document.getElementById('sname').disabled = false;" type="radio" name="Martial Status" checked="checked">married
+
+									<input onclick="document.getElementById('sname').disabled = true;" type="radio" name="Martial Status" value="Unmarried">unmarried</td>
+		
+							</div>
+						  </div>
+
+						  <div class="form-group">
+								<label class="control-label col-sm-2">Name Of Spouse</label>
+								<div class="col-sm-10">
+										<input type="text" name="name of spouse" id="sname" class="form-control"   value="Name of spouse" >
+								</div>
+							  </div>
+		
+							  <div class="form-group">
+									<label class="control-label col-sm-2">Other Details</label>
+									<div class="col-sm-10">
+											<input type="text" name="name of spouse" id="sname" class="form-control"   value="OTHER DETAILS" >
+									</div>
+								  </div>
+
+
+
+		  <div class="form-group">        
+			<div class="col-sm-offset-2 col-sm-10">
+			  <div class="checkbox">
+				<label><input type="checkbox" name="remember"> I accept the<a href="http://www.bristol.ac.uk/hr/terms/generalterms.html">terms and conditions</a></label>
+			  </div>
+			</div>
+		  </div>
+		  <div class="form-group">        
+			<div class="col-sm-offset-2 col-sm-10">
+			  <button type="submit" class="btn btn-success" onclick="myFunction()">Submit</button>
+			  <button type="reset" value="Reset"class="btn btn-warning" >Reset</button>
+			</div>
+		  </div>
+		</form>
+	  </div>
+	  
+
+
+<body>
+
+
+
+	
+		
+
+</body>
+</html>
